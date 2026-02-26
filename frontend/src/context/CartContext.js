@@ -31,11 +31,12 @@ export const CartProvider = ({ children }) => {
   }, []);
 
   // Fetch cart on session load
-  useEffect(() => {
-    if (sessionId) {
-      fetchCart();
-    }
-  }, [sessionId]);
+useEffect(() => {
+  if (sessionId) {
+    fetchCart();
+  }
+// eslint-disable-next-line react-hooks/exhaustive-deps
+}, [sessionId]);
 
   // Fetch products
   useEffect(() => {
