@@ -1,10 +1,8 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import axios from "axios";
+
 const BACKEND = process.env.REACT_APP_BACKEND_URL;
-const API = BACKEND ? BACKEND.replace(/\/$/, "") : "";
-
-
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+const API = BACKEND ? `${BACKEND.replace(/\/$/, "")}/api` : "";
 
 const CartContext = createContext(null);
 
