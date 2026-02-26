@@ -1,10 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 const BACKEND = process.env.REACT_APP_BACKEND_URL;
-const API = BACKEND ? BACKEND.replace(/\/$/, "") : "";
-
-
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+const API = BACKEND ? `${BACKEND.replace(/\/$/, "")}/api` : "";
 
 /**
  * Hook for fetching live Shopify product data with auto-refresh
