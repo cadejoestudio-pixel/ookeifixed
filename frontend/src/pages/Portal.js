@@ -7,10 +7,7 @@ import axios from "axios";
 import { useLiveProducts } from "@/hooks/useLiveShopify";
 import LiveProductCard from "@/components/LiveProductCard";
 const BACKEND = process.env.REACT_APP_BACKEND_URL;
-const API = BACKEND ? BACKEND.replace(/\/$/, "") : "";
-
-
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+const API = BACKEND ? `${BACKEND.replace(/\/$/, "")}/api` : "";
 
 // Brand Assets
 const ASSETS = {
