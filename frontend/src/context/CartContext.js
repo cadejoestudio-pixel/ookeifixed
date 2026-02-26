@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState, useEffect, useCallback } from "react";
 import axios from "axios";
 
 const BACKEND = process.env.REACT_APP_BACKEND_URL;
@@ -52,14 +52,14 @@ useEffect(() => {
     }
   };
 
-  const fetchCart = async () => {
-    try {
-      const response = await axios.get(`${API}/cart/${sessionId}`);
-      setCart(response.data);
-    } catch (error) {
-      console.error("Error fetching cart:", error);
-    }
-  };
+  const fetchCart = useCallback(async () => {
+  try {
+    const response = await axios.get(`${API}/cart/${sessionId}`);
+    setCart(response.data);
+  } catch (error) {
+    console.error("Error fetching cart:", error);
+  }
+}, [sessionId]);
 
   const addToCart = async (productId, variantSize, quantity = 1, color = null) => {
     try {
