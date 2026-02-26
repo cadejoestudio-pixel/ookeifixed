@@ -1,0 +1,141 @@
+{
+  "project_name": "OOKEI",
+  "design_philosophy": {
+    "theme": "The White Cube Portal",
+    "vibes": ["Brutalist", "High-Exclusivity", "Minimalist Art Gallery", "Hype Streetwear"],
+    "core_principles": [
+      "Negative Space is Luxury: Use 40% screen real estate for whitespace.",
+      "Asymmetry creates Tension: Avoid perfect centering everywhere.",
+      "Text is Texture: Typography is the main graphic element.",
+      "Scarcity is Key: UI should feel like a countdown or a limited access event."
+    ]
+  },
+  "typography": {
+    "font_family": {
+      "heading": "Inter, Helvetica Neue, Helvetica, Arial, sans-serif",
+      "body": "Inter, Helvetica Neue, Helvetica, Arial, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "styles": {
+      "display_massive": "text-7xl md:text-9xl font-black tracking-tighter uppercase leading-none",
+      "heading_xl": "text-5xl md:text-7xl font-bold tracking-tighter uppercase leading-none",
+      "heading_lg": "text-3xl md:text-5xl font-bold tracking-tight uppercase",
+      "heading_md": "text-xl md:text-2xl font-semibold tracking-tight uppercase",
+      "body_base": "text-base md:text-lg font-normal tracking-normal leading-relaxed",
+      "body_sm": "text-sm font-medium tracking-wide leading-relaxed",
+      "label_micro": "text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase"
+    }
+  },
+  "colors": {
+    "palette": {
+      "background": "#FFFFFF",
+      "foreground": "#000000",
+      "primary": "#000000",
+      "primary_foreground": "#FFFFFF",
+      "secondary": "#F4F4F5",
+      "secondary_foreground": "#000000",
+      "accent": "#FF4F00",
+      "accent_foreground": "#FFFFFF",
+      "muted": "#F4F4F5",
+      "muted_foreground": "#737373",
+      "border": "#E5E5E5",
+      "input": "#E5E5E5",
+      "ring": "#000000"
+    },
+    "usage_rules": {
+      "background": "ALWAYS Pure White (#FFFFFF). No off-whites for main backgrounds.",
+      "text": "ALWAYS Pure Black (#000000). No dark greys for body text.",
+      "accent": "Use International Orange (#FF4F00) SPARINGLY. Only for: 'Enter' buttons, 'Sold Out' badges, and tiny UI accents (1-2% of screen).",
+      "borders": "Use 1px solid black or light grey borders for separation. NO SHADOWS."
+    }
+  },
+  "visual_enhancers": {
+    "radius": "rounded-none",
+    "shadows": "none",
+    "borders": "border border-black/10",
+    "glass": "bg-white/80 backdrop-blur-md border-b border-black/5",
+    "texture": "Subtle noise overlay (opacity 0.03) allowed on solid backgrounds to prevent 'digital flatness'."
+  },
+  "layout": {
+    "grid_system": "Use CSS Grid with 12 columns. Overlap elements deliberately.",
+    "spacing": {
+      "container": "p-4 md:p-8 lg:p-12",
+      "section_gap": "gap-24 md:gap-40"
+    },
+    "z_index": {
+      "portal_overlay": 50,
+      "nav": 40,
+      "dropdown": 45,
+      "content": 10
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "rounded-none bg-black text-white hover:bg-[#FF4F00] hover:text-white transition-colors duration-300 px-8 py-4 uppercase tracking-widest text-sm font-bold",
+      "secondary": "rounded-none border border-black bg-transparent text-black hover:bg-black hover:text-white transition-colors duration-300 px-8 py-4 uppercase tracking-widest text-sm font-bold",
+      "ghost": "text-black hover:text-[#FF4F00] uppercase tracking-widest text-xs font-bold"
+    },
+    "cards": {
+      "product": "group relative border-r border-b border-black/10 p-4 hover:bg-neutral-50 transition-colors",
+      "archive": "opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-500"
+    },
+    "inputs": {
+      "default": "rounded-none border-b border-black bg-transparent px-0 py-4 text-lg focus:border-[#FF4F00] focus:ring-0 placeholder:text-neutral-400"
+    }
+  },
+  "motion": {
+    "library": "framer-motion",
+    "settings": {
+      "page_transition": {
+        "initial": { "opacity": 0, "y": 20 },
+        "animate": { "opacity": 1, "y": 0 },
+        "exit": { "opacity": 0, "y": -20 },
+        "transition": { "duration": 0.6, "ease": [0.22, 1, 0.36, 1] }
+      },
+      "reveal": {
+        "viewport": { "once": true },
+        "initial": { "opacity": 0, "y": 40 },
+        "whileInView": { "opacity": 1, "y": 0 },
+        "transition": { "duration": 0.8, "ease": "easeOut" }
+      },
+      "hover_image": "scale-105 transition-transform duration-700 ease-in-out"
+    }
+  },
+  "image_urls": {
+    "hero_portal": {
+      "url": "https://images.pexels.com/photos/8217299/pexels-photo-8217299.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "desc": "Main portal reveal image. Two models in white tees, minimalist.",
+      "category": "hero"
+    },
+    "product_drop_001": {
+      "url": "https://images.unsplash.com/photo-1758967820401-36e8b3a4e1a2?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "desc": "Secondary product shot or lookbook image. Woman in white shirt.",
+      "category": "product"
+    },
+    "texture_concrete": {
+      "url": "https://images.pexels.com/photos/11255123/pexels-photo-11255123.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "desc": "Background texture for Archive/Footer sections.",
+      "category": "texture"
+    },
+    "texture_abstract": {
+      "url": "https://images.unsplash.com/photo-1586626922300-9a4513c6df91?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "desc": "Abstract architectural form for subtle overlays.",
+      "category": "texture"
+    }
+  },
+  "instructions_to_main_agent": [
+    "1. THEME SETUP: Update `tailwind.config.js` immediately to extend colors with the specific Palette defined above. Set `borderRadius` to `0px` globally.",
+    "2. PORTAL FIRST: The Homepage ('/') must be the 'Portal'. It is NOT a shop grid. It is a single, immersive screen with a countdown and an 'ENTER' button that unlocks the actual shop.",
+    "3. NAVIGATION: The nav bar should be hidden or extremely minimal on the Portal. On the Shop page, use a sticky minimalist header with a 'Menu' text button triggering a full-screen overlay.",
+    "4. PRODUCT GRID: Use a 'Bento' style grid for the shop. Not all product cards should be the same size. Make the latest drop ('Drop 001') take up 2x2 columns.",
+    "5. TYPOGRAPHY: Use 'Inter' but apply `tracking-tighter` and `font-bold` to all headings to simulate a premium grotesque font.",
+    "6. ACCESSIBILITY: Ensure all white text on images has a subtle black scrim/gradient behind it, or use mixed-blend-mode: difference (carefully).",
+    "7. TESTING: Add `data-testid` to every interactive element (buttons, inputs, links)."
+  ],
+  "universal_guidelines": [
+    "Do not use gradients. Use solid colors.",
+    "Do not use rounded corners. Everything is sharp (0px).",
+    "Do not use generic 'Lorem Ipsum'. Use the copy provided in the prompt ('WE KNOW YOU LOOKED', 'NOT FOR EVERYONE').",
+    "Do not center text by default. Left align is stronger for this brutalist style."
+  ]
+}

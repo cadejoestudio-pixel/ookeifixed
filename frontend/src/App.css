@@ -1,0 +1,331 @@
+/* OOKEI Portal Styles */
+
+/* Portal transition overlay */
+.portal-overlay {
+    position: fixed;
+    inset: 0;
+    background: #000000;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hero section */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .hero-section {
+        padding: 4rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-section {
+        padding: 6rem;
+    }
+}
+
+/* Floating abstract shape */
+.floating-shape {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    animation: float 6s ease-in-out infinite;
+}
+
+@media (min-width: 768px) {
+    .floating-shape {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .floating-shape {
+        width: 500px;
+        height: 500px;
+    }
+}
+
+/* Product grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+}
+
+@media (min-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Product card hover effect */
+.product-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.product-card:hover::before {
+    opacity: 1;
+}
+
+.product-card-image {
+    transition: transform 0.7s ease;
+}
+
+.product-card:hover .product-card-image {
+    transform: scale(1.05);
+}
+
+/* Manifesto section */
+.manifesto-section {
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem 2rem;
+}
+
+@media (min-width: 768px) {
+    .manifesto-section {
+        padding: 8rem 4rem;
+    }
+}
+
+/* Email capture */
+.email-capture {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 4rem 2rem;
+}
+
+@media (min-width: 768px) {
+    .email-capture {
+        padding: 6rem 4rem;
+    }
+}
+
+/* Navigation */
+.nav-minimal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 40;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    transition: background 0.3s ease;
+}
+
+.nav-minimal.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Menu overlay */
+.menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: #FFFFFF;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+}
+
+/* Archive card */
+.archive-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.archive-card::after {
+    content: 'SOLD OUT';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-12deg);
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 0.2em;
+    color: #FF4F00;
+    white-space: nowrap;
+}
+
+/* Size selector */
+.size-btn {
+    min-width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000000;
+    background: transparent;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.size-btn:hover:not(:disabled) {
+    background: #000000;
+    color: #FFFFFF;
+}
+
+.size-btn.selected {
+    background: #000000;
+    color: #FFFFFF;
+}
+
+.size-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* Scarcity indicator */
+.scarcity-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.scarcity-dot {
+    width: 8px;
+    height: 8px;
+    background: #FF4F00;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Accordion */
+.accordion-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.accordion-trigger {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.875rem;
+}
+
+.accordion-content {
+    padding-bottom: 1.5rem;
+    color: #737373;
+}
+
+/* Cart drawer */
+.cart-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: 400px;
+    background: #FFFFFF;
+    z-index: 60;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    transform: translateX(100%);
+    transition: transform 0.4s ease;
+}
+
+.cart-drawer.open {
+    transform: translateX(0);
+}
+
+/* Page transitions */
+.page-enter {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.page-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.6s ease;
+}
+
+.page-exit {
+    opacity: 1;
+}
+
+.page-exit-active {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.4s ease;
+}
+
+/* Countdown */
+.countdown-digit {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum";
+}
+
+/* Contact form */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #000000;
+    background: transparent;
+    padding: 1rem 0;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #FF4F00;
+}
+
+.contact-form textarea {
+    min-height: 120px;
+    resize: none;
+}
+
+/* Responsive utilities */
+@media (max-width: 767px) {
+    .mobile-full {
+        margin-left: -1rem;
+        margin-right: -1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}

@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --background: #FFFFFF;
+    --foreground: #000000;
+    --primary: #000000;
+    --primary-foreground: #FFFFFF;
+    --secondary: #F4F4F5;
+    --secondary-foreground: #000000;
+    --accent: #FF4F00;
+    --accent-foreground: #FFFFFF;
+    --muted: #F4F4F5;
+    --muted-foreground: #737373;
+    --border: #E5E5E5;
+    --input: #E5E5E5;
+    --ring: #000000;
+    --radius: 0px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: var(--background);
+    color: var(--foreground);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+/* Remove all rounded corners */
+* {
+    border-radius: 0 !important;
+}
+
+/* Typography utilities */
+.text-display-massive {
+    @apply text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter uppercase leading-none;
+}
+
+.text-heading-xl {
+    @apply text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter uppercase leading-none;
+}
+
+.text-heading-lg {
+    @apply text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight uppercase;
+}
+
+.text-heading-md {
+    @apply text-lg md:text-xl lg:text-2xl font-semibold tracking-tight uppercase;
+}
+
+.text-body-base {
+    @apply text-base md:text-lg font-normal tracking-normal leading-relaxed;
+}
+
+.text-body-sm {
+    @apply text-sm font-medium tracking-wide leading-relaxed;
+}
+
+.text-label-micro {
+    @apply text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase;
+}
+
+/* Button styles */
+.btn-primary {
+    @apply bg-black text-white hover:bg-[#FF4F00] transition-colors duration-300 px-8 py-4 uppercase tracking-widest text-sm font-bold;
+}
+
+.btn-secondary {
+    @apply border border-black bg-transparent text-black hover:bg-black hover:text-white transition-colors duration-300 px-8 py-4 uppercase tracking-widest text-sm font-bold;
+}
+
+.btn-ghost {
+    @apply text-black hover:text-[#FF4F00] uppercase tracking-widest text-xs font-bold transition-colors duration-300;
+}
+
+/* Input styles */
+.input-minimal {
+    @apply border-b border-black bg-transparent px-0 py-4 text-lg focus:border-[#FF4F00] focus:outline-none placeholder:text-neutral-400;
+}
+
+/* Card styles */
+.card-product {
+    @apply relative border-r border-b border-black/10 p-4 hover:bg-neutral-50 transition-colors;
+}
+
+.card-archive {
+    @apply opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-500;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #000000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #FF4F00;
+}
+
+/* Selection */
+::selection {
+    background: #FF4F00;
+    color: #FFFFFF;
+}
+
+/* Custom cursor on hover elements */
+a, button, [role="button"] {
+    cursor: pointer;
+}
+
+/* Glass effect */
+.glass {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* Noise texture overlay */
+.noise-overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+}
+
+/* Hide scrollbar but keep functionality */
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+}
