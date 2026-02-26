@@ -5,10 +5,7 @@ import axios from "axios";
 import { toast } from "sonner";
 import Header from "@/components/Header";
 const BACKEND = process.env.REACT_APP_BACKEND_URL;
-const API = BACKEND ? BACKEND.replace(/\/$/, "") : "";
-
-
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+const API = BACKEND ? `${BACKEND.replace(/\/$/, "")}/api` : "";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
